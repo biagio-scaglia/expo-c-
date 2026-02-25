@@ -6,9 +6,9 @@ public class InMemEldenRepository : IEldenRepository
 {
     private readonly List<Character> _characters = new()
     {
-        new Character { Id = 1, Name = "Malenia, Blade of Miquella", Title = "Goddess of Rot", Description = "A fierce warrior who has never known defeat.", LocationId = 1 },
-        new Character { Id = 2, Name = "Radagon of the Golden Order", Title = "The Second Elden Lord", Description = "A champion who came to the Lands Between.", LocationId = 2 },
-        new Character { Id = 3, Name = "Ranni the Witch", Title = "Lunar Princess", Description = "A mysterious witch seeking to usher in the Age of Stars.", LocationId = 3 }
+        new Character { Id = 1, Name = "Malenia, Blade of Miquella", Title = "Goddess of Rot", Description = "A fierce warrior who has never known defeat.", Vigor = 99, Mind = 20, Endurance = 50, Strength = 30, Dexterity = 90, Intelligence = 10, Faith = 10, Arcane = 10, LocationId = 1 },
+        new Character { Id = 2, Name = "Radagon of the Golden Order", Title = "The Second Elden Lord", Description = "A champion who came to the Lands Between.", Vigor = 90, Mind = 40, Endurance = 60, Strength = 80, Dexterity = 40, Intelligence = 50, Faith = 60, Arcane = 10, LocationId = 2 },
+        new Character { Id = 3, Name = "Ranni the Witch", Title = "Lunar Princess", Description = "A mysterious witch seeking to usher in the Age of Stars.", Vigor = 40, Mind = 80, Endurance = 30, Strength = 10, Dexterity = 20, Intelligence = 99, Faith = 20, Arcane = 40, LocationId = 3 }
     };
 
     private readonly List<Location> _locations = new()
