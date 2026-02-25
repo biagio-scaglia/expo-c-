@@ -17,28 +17,55 @@ interface HomeScreenProps {
     navigation: HomeScreenNavigationProp;
 }
 
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
-    const NavButton = ({ title, icon: Icon, target }: { title: string, icon: LucideIcon, target: keyof RootStackParamList }) => (
-        <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate(target)}
-        >
-            <Icon color={Colors.primary} size={32} />
-            <Text style={styles.buttonText}>{title}</Text>
-        </TouchableOpacity>
-    );
+import { MotiView, MotiText } from 'moti';
 
+const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Elden Ring Database</Text>
+            <MotiView
+                from={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ type: 'timing', duration: 1000 }}
+                style={styles.hero}
+            >
+                <MotiText
+                    from={{ opacity: 0, translateY: -20 }}
+                    animate={{ opacity: 1, translateY: 0 }}
+                    transition={{ delay: 500 }}
+                    style={styles.header}
+                >
+                    Elden Ring
+                </MotiText>
+                <MotiText
+                    from={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 800 }}
+                    style={styles.subHeader}
+                >
+                    Database
+                </MotiText>
+            </MotiView>
 
-            <View style={styles.grid}>
-                <NavButton title="Characters" icon={Users} target="Characters" />
-                <NavButton title="Locations" icon={MapPin} target="Locations" />
-                <NavButton title="Lore" icon={BookOpen} target="Lore" />
-            </View>
+            <MotiView
+                from={{ opacity: 0, translateY: 50 }}
+                animate={{ opacity: 1, translateY: 0 }}
+                transition={{ delay: 1000 }}
+                style={styles.welcomeCard}
+            >
+                <Text style={styles.welcomeTitle}>Welcome, Tarnished</Text>
+                <Text style={styles.welcomeText}>
+                    Explore the vast Lands Between. Use the navigation below to discover legendary characters, mystical locations, and ancient lore.
+                </Text>
+            </MotiView>
 
-            <Text style={styles.footer}>Assemble the Elden Ring, Tarnished.</Text>
+            <MotiText
+                from={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1500 }}
+                style={styles.footer}
+            >
+                Assemble the Elden Ring.
+            </MotiText>
         </View>
     );
 };
@@ -48,39 +75,63 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.background,
         alignItems: 'center',
-        justifyContent: 'center',
-        padding: Spacing.lg
+        padding: Spacing.lg,
+        paddingTop: 100,
+    },
+    hero: {
+        alignItems: 'center',
+        marginBottom: 60,
     },
     header: {
         color: Colors.primary,
-        fontSize: 32,
+        fontSize: 48,
         fontWeight: 'bold',
         fontFamily: 'serif',
-        marginBottom: Spacing.lg * 2,
-        textAlign: 'center'
+        letterSpacing: 4,
+        textTransform: 'uppercase',
     },
-    grid: { width: '100%' },
-    button: {
-        flexDirection: 'row',
-        alignItems: 'center',
+    subHeader: {
+        color: Colors.secondary,
+        fontSize: 18,
+        fontFamily: 'serif',
+        marginTop: -10,
+        letterSpacing: 2,
+    },
+    welcomeCard: {
         backgroundColor: Colors.card,
-        padding: Spacing.md,
-        borderRadius: 8,
-        marginBottom: Spacing.md,
+        padding: Spacing.xl,
+        borderRadius: 12,
         borderWidth: 1,
         borderColor: Colors.border,
+        width: '100%',
+        alignItems: 'center',
+        shadowColor: Colors.primary,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
+        elevation: 5,
     },
-    buttonText: {
+    welcomeTitle: {
+        color: Colors.primary,
+        fontSize: 24,
+        fontWeight: 'bold',
+        fontFamily: 'serif',
+        marginBottom: Spacing.md,
+    },
+    welcomeText: {
         color: Colors.text,
-        fontSize: 20,
-        marginLeft: Spacing.md,
+        fontSize: 16,
+        textAlign: 'center',
+        lineHeight: 24,
         fontFamily: 'serif',
     },
     footer: {
         color: Colors.secondary,
         fontStyle: 'italic',
-        marginTop: Spacing.lg * 2,
+        marginTop: 'auto',
+        marginBottom: Spacing.xl,
         fontSize: 14,
+        letterSpacing: 1,
     }
 });
 
