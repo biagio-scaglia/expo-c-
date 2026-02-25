@@ -41,7 +41,7 @@ using (var scope = app.Services.CreateScope())
         db.Characters.AddRange(malenia, radagon, ranni);
         
         db.Locations.AddRange(
-            new Location { Name = "Elphael, Brace of the Haligtree", Region = "Miquella's Haligtree", Description = "A secret city hidden within the branches of the Haligtree.", ImageUrl = "/images/elphael.avif" },
+            new Location { Name = "Elphael, Brace of the Haligtree", Region = "Miquella's Haligtree", Description = "A secret city hidden within the branches of the Haligtree.", ImageUrl = "/images/elphael.webp" },
             new Location { Name = "Elden Throne", Region = "Leyndell, Royal Capital", Description = "The seat of the Elden Lord within the Erdtree.", ImageUrl = "/images/elden throne.webp" },
             new Location { Name = "Ranni's Rise", Region = "Liurnia of the Lakes", Description = "A tower where the Lunar Princess resides.", ImageUrl = "/images/ranni's rise.jpg" }
         );

@@ -2,6 +2,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['props.pointerEvents is deprecated']);
 
 import HomeScreen from './src/screens/HomeScreen';
 import CharactersScreen from './src/screens/CharactersScreen';
