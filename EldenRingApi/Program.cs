@@ -33,6 +33,7 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/", () => Results.Redirect("/scalar/v1"));
 
+app.UseStaticFiles();
 app.UseCors("AllowAll");
 app.UseAuthorization();
 app.MapControllers();

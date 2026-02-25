@@ -14,5 +14,6 @@ public class Character
     public int Intelligence { get; set; }
     public int Faith { get; set; }
     public int Arcane { get; set; }
+    public string ImageUrl { get; set; } = string.Empty;
     public int? LocationId { get; set; }
 }
