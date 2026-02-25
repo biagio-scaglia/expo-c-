@@ -48,7 +48,7 @@ function TabNavigator() {
                 },
             })}
         >
-            <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'The Lands Between' }} />
+            <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
             <Tab.Screen name="Characters" component={CharactersScreen} />
             <Tab.Screen name="Locations" component={LocationsScreen} />
             <Tab.Screen name="Lore" component={LoreScreen} />

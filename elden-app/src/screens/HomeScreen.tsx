@@ -105,10 +105,8 @@ const styles = StyleSheet.create({
         borderColor: Colors.border,
         width: '100%',
         alignItems: 'center',
-        shadowColor: Colors.primary,
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.1,
-        shadowRadius: 10,
+        // boxShadow is the web-friendly replacement for shadow* props
+        boxShadow: `0px 4px 10px rgba(193, 160, 94, 0.2)`,
         elevation: 5,
     },
     welcomeTitle: {
