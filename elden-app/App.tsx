@@ -26,6 +26,7 @@ export default function App() {
         <NavigationContainer>
             <StatusBar style="light" />
             <Stack.Navigator
+                id="RootStack"
                 initialRouteName="Home"
                 screenOptions={{
                     headerStyle: { backgroundColor: Colors.background },
