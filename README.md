@@ -3,14 +3,14 @@
 Un'applicazione cross-platform ispirata a Elden Ring, composta da un frontend in **React Native (Expo)** e un backend in **ASP.NET Core**.
 
 ## Funzionalità
-- **Personaggi**: Visualizzazione dei personaggi iconici con titolo e descrizione.
-- **Luoghi**: Esplorazione delle regioni dell'Interregno.
-- **Lore**: Dettagli approfonditi sulla storia del gioco.
-- **Accesso Mobile**: Configurato per funzionare sulla rete locale (LAN).
+- **Animazioni Premium**: Caricamento fluido delle card grazie a `moti` (Reanimated).
+- **Persistenza Dati**: Database **SQLite** reale con **Entity Framework Core**.
+- **Personaggi & Stats**: Database RPG completo di attributi e immagini dal backend.
+- **Accesso Mobile**: Ottimizzato per la rete locale (LAN).
 
 ## Tecnologie Utilizzate
-- **Backend**: C# / ASP.NET Core (In-Memory Database, Scalar API Docs, CORS enabled).
-- **Frontend**: TypeScript / React Native / Expo / Axios / Lucide Icons.
+- **Backend**: C# / ASP.NET Core / EF Core / SQLite / Scalar API Docs.
+- **Frontend**: TypeScript / React Native / Expo / Moti / Axios / Lucide Icons.
 
 ## Come Iniziare
 
