@@ -36,14 +36,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                 >
                     Elden Ring
                 </MotiText>
-                <MotiText
-                    from={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 800 }}
-                    style={styles.subHeader}
-                >
-                    Database
-                </MotiText>
+
             </MotiView>
 
             <MotiView
@@ -75,12 +68,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.background,
         alignItems: 'center',
+        justifyContent: 'center',
         padding: Spacing.lg,
-        paddingTop: 100,
     },
     hero: {
         alignItems: 'center',
-        marginBottom: 60,
+        marginBottom: 80,
     },
     header: {
         color: Colors.primary,
@@ -126,8 +119,7 @@ const styles = StyleSheet.create({
     footer: {
         color: Colors.secondary,
         fontStyle: 'italic',
-        marginTop: 'auto',
-        marginBottom: Spacing.xl,
+        marginTop: 60,
         fontSize: 14,
         letterSpacing: 1,
     }

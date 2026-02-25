@@ -32,9 +32,9 @@ function TabNavigator() {
                 tabBarStyle: {
                     backgroundColor: Colors.card,
                     borderTopColor: Colors.border,
-                    height: 60,
-                    paddingBottom: 8,
-                    paddingTop: 8
+                    height: 85,
+                    paddingBottom: 25,
+                    paddingTop: 10
                 },
                 tabBarActiveTintColor: Colors.primary,
                 tabBarInactiveTintColor: Colors.secondary,
