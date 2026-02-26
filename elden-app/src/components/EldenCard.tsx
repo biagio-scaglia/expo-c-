@@ -3,6 +3,9 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import { MotiView } from 'moti';
 import { Colors, Spacing } from './Theme';
 
+import { LinearGradient } from 'expo-linear-gradient';
+import Markdown from 'react-native-markdown-display';
+
 interface EldenCardProps {
     title: string;
     subtitle?: string;
@@ -36,13 +39,22 @@ const EldenCard = ({ title, subtitle, description, stats, imageUrl, index = 0 }:
                         style={styles.image}
                         resizeMode="cover"
                     />
-                    <View style={styles.imageOverlay} />
+                    <LinearGradient
+                        colors={['rgba(0,0,0,0.1)', 'rgba(0,0,0,0.8)']}
+                        style={styles.imageOverlay}
+                    />
                 </View>
             )}
             <View style={styles.content}>
                 <Text style={styles.title}>{title}</Text>
                 {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
-                {description && <Text style={styles.description}>{description}</Text>}
+
+                {description && (
+                    <Markdown style={markdownStyles}>
+                        {description}
+                    </Markdown>
+                )}
+
                 {stats && (
                     <View style={styles.statsContainer}>
                         <View style={styles.statRow}>
@@ -66,6 +78,24 @@ const EldenCard = ({ title, subtitle, description, stats, imageUrl, index = 0 }:
     );
 };
 
+const markdownStyles = StyleSheet.create({
+    body: {
+        color: Colors.text,
+        fontSize: 16,
+        lineHeight: 24,
+        fontFamily: 'serif',
+        marginBottom: Spacing.lg,
+    },
+    strong: {
+        color: Colors.primary,
+        fontWeight: 'bold',
+    },
+    em: {
+        color: Colors.primary,
+        fontStyle: 'italic',
+    }
+});
+
 const styles = StyleSheet.create({
     card: {
         backgroundColor: Colors.card,
@@ -88,7 +118,6 @@ const styles = StyleSheet.create({
     },
     imageOverlay: {
         ...StyleSheet.absoluteFillObject,
-        backgroundColor: 'rgba(0,0,0,0.2)',
         borderBottomWidth: 2,
         borderBottomColor: Colors.primary,
     },
@@ -108,12 +137,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontStyle: 'italic',
         marginBottom: Spacing.md,
-    },
-    description: {
-        color: Colors.text,
-        fontSize: 16,
-        lineHeight: 24,
-        marginBottom: Spacing.lg,
     },
     statsContainer: {
         borderTopWidth: 1,

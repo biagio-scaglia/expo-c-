@@ -7,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c => 
+{
+    c.EnableAnnotations();
+});
 
 builder.Services.AddDbContext<EldenDbContext>(options =>
     options.UseSqlite("Data Source=elden.db"));
@@ -46,10 +49,12 @@ using (var scope = app.Services.CreateScope())
             new Location { Name = "Ranni's Rise", Region = "Liurnia of the Lakes", Description = "A tower where the Lunar Princess resides.", ImageUrl = "/images/ranni's rise.jpg" }
         );
         
+        var loreDir = Path.Combine(builder.Environment.ContentRootPath, "SeedData", "Lore");
+        
         db.LoreEntries.AddRange(
-            new Lore { Title = "The Shattering", Content = "The war that followed the destruction of the Elden Ring." },
-            new Lore { Title = "The Scarlet Rot", Content = "A parasitic disease that consumes the Lands Between." },
-            new Lore { Title = "The Dark Moon", Content = "A sign of the Age of Stars proposed by Ranni." }
+            new Lore { Title = "The Shattering", Content = File.ReadAllText(Path.Combine(loreDir, "the_shattering.md")) },
+            new Lore { Title = "The Scarlet Rot", Content = File.ReadAllText(Path.Combine(loreDir, "scarlet_rot.md")) },
+            new Lore { Title = "The Dark Moon", Content = File.ReadAllText(Path.Combine(loreDir, "dark_moon.md")) }
         );
         
         db.SaveChanges();

@@ -23,63 +23,68 @@ style: |
     padding: 2px 6px;
     border-radius: 4px;
   }
+  .byline {
+    font-size: 0.8em;
+    color: #8a7d51;
+    font-style: italic;
+  }
 ---
 
-# Elden Ring Database
-### Full-Stack Architecture & Premium UI
-**By Biagigio & the Tarnished**
+# L'Interregno in Tasca
+### Architettura Full-Stack per Elden Ring
+<p class="byline">by Biagio Scaglia</p>
 
 ---
 
-## 🏛️ Project Overview
-A modern, scalable database for the Lands Between.
+## 🏛️ Panoramica del Progetto
+Un database moderno, scalabile e dal design premium ispirato alle Terre Intermedie.
 
 - **Backend**: ASP.NET Core 8.0 LTS
 - **Mobile**: React Native 0.81 (Expo)
-- **Data**: Entity Framework Core + SQLite
-- **Documentation**: Scalar API Reference
+- **Database**: Entity Framework Core + SQLite
+- **Infrastruttura**: Docker & Docker Compose
 
 ---
 
-## ⚙️ Backend Architecture
-Robust and stabilized for production.
+## ⚙️ Il Backend (La Grazia)
+Solido, documentato e pronto per la produzione.
 
-- **Migration to .NET 8.0**: Ensured long-term support and stability.
-- **RESTful API**: Optimized for mobile consumption with custom DTOs.
-- **Advanced Tools**: Integrated **Scalar** for high-fidelity API documentation.
-- **Repository Pattern**: Clean data access logic and easy testing.
-
----
-
-## 📱 Mobile Experience (UI/UX)
-Cinematic, dark-fantasy design.
-
-- **Fluid Animations**: Staggered list items and hero scaling via `Moti`.
-- **Theme System**: Custom "Golden Order" palette matching in-game aesthetics.
-- **Responsive Layouts**: Overlay images, dynamic tab bar, and custom stat grids.
-- **Type Safety**: Fully typed with TypeScript & React Navigation 7.
+- **Minimal APIs & Repository Pattern**: Architettura pulita e separazione delle responsabilità.
+- **Seeding Intelligente**: Dati di base della "Lore" caricati dinamicamente da veri file `.md` fisici.
+- **Documentazione Premium**: Integrazione di **Scalar** potenziata con `Swashbuckle Annotations` per API self-documenting.
 
 ---
 
-## 🛠️ Technical Refinements
-Overcoming the "Malenia" of bugs.
+## 📱 Frontend: Design & UX
+Un'esperienza utente oscura e cinematografica.
 
-- **Environment Config**: Implemented `EXPO_PUBLIC_API_URL` for seamless deployment without hardcoded IPs.
-- **Deprecation Fixes**: Silenced library-level warnings and deprecated React Native props.
-- **Asset Integrity**: Synchronized `.webp` image hosting between EF Core seed data and static files.
-
----
-
-## 🐳 Deployment (Docker)
-Containerized for the Age of Stars.
-
-- **Multi-stage Builds**: Lightweight Alpine production `.NET` images.
-- **Orchestration**: `docker-compose` for local and cloud deployment.
-- **Persistence**: Database volumes for reliable SQLite storage.
+- **Golden Order Theme**: Palette colori custom (`#050505`, `#d4af37`) coerente con l'estetica del gioco.
+- **Moti Animations**: Animazioni fluide e scalate per l'ingresso delle card e gli scroll.
+- **Dettagli Visivi**: Utilizzo di `expo-linear-gradient` per sfumature morbide ed eleganti sulle immagini.
+- **Lore in Markdown**: Rendering nativo su mobile di testi ricchi tramite `react-native-markdown-display`.
 
 ---
 
-# THANK YOU, TARNISHED
-### "Arise now, ye Tarnished, ye dead, who yet live."
+## 🛠️ Qualità e Stabilità
+Sconfiggere i bug come i boss di Elden Ring.
+
+- **Ambiente Dinamico**: Addio agli IP hardcoded; configurazione fluida tramite `EXPO_PUBLIC_API_URL`.
+- **Integrità degli Asset**: Sincronizzazione perfetta tra backend (immagini in formato `.webp` super leggero) e front-end.
+- **Type Safety Assoluta**: Integrazione rigorosa di TypeScript in tutta l'app React Native.
+
+---
+
+## 🐳 Deployment (Age of Stars)
+Containerizzato per brillare ovunque.
+
+- **Multi-stage Builds**: Immagini di produzione leggerissime basate su Alpine Linux per .NET.
+- **Orchestrazione Locale**: Setup istantaneo con un singolo comando `docker-compose up`.
+- **Persistenza Implacabile**: Volumi Docker per salvaguardare il preziosissimo database SQLite.
+
+---
+
+# GRAZIE DELLA VISITA, SENZALUCE.
+### "Alzatevi, Senzaluce. Voi che siete morti, eppure vivete."
+<p class="byline">Biagio Scaglia - Full Stack Developer</p>
 
 ---
