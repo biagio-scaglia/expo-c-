@@ -1,7 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import { Character, Location, Lore } from '../types';
 
-export const API_BASE_URL = 'http://192.168.1.57:5035';
+// Use Expo's built-in environment variables, fallback to localhost for emulator testing
+export const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:5035';
 const API_URL = `${API_BASE_URL}/api`;
 
 const api = axios.create({

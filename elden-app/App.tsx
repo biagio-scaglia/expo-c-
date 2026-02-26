@@ -28,22 +28,24 @@ function TabNavigator() {
             screenOptions={({ route }) => ({
                 headerStyle: { backgroundColor: Colors.background, borderBottomWidth: 1, borderBottomColor: Colors.border },
                 headerTintColor: Colors.primary,
-                headerTitleStyle: { fontFamily: 'serif', fontWeight: 'bold' },
+                headerTitleStyle: { fontFamily: 'serif', fontWeight: 'bold', fontSize: 22, letterSpacing: 2 },
                 tabBarStyle: {
                     backgroundColor: Colors.card,
                     borderTopColor: Colors.border,
-                    height: 85,
-                    paddingBottom: 25,
-                    paddingTop: 10
+                    borderTopWidth: 1,
+                    height: 70,
+                    paddingBottom: 12,
+                    paddingTop: 8,
                 },
                 tabBarActiveTintColor: Colors.primary,
-                tabBarInactiveTintColor: Colors.secondary,
-                tabBarLabelStyle: { fontFamily: 'serif', fontSize: 10 },
+                tabBarInactiveTintColor: Colors.border,
+                tabBarLabelStyle: { fontFamily: 'serif', fontSize: 13, fontWeight: 'bold', letterSpacing: 1 },
                 tabBarIcon: ({ color, size }) => {
-                    if (route.name === 'Home') return <Home color={color} size={size} />;
-                    if (route.name === 'Characters') return <Users color={color} size={size} />;
-                    if (route.name === 'Locations') return <MapPin color={color} size={size} />;
-                    if (route.name === 'Lore') return <BookOpen color={color} size={size} />;
+                    const iconSize = route.name === 'Home' ? size + 4 : size;
+                    if (route.name === 'Home') return <Home color={color} size={iconSize} />;
+                    if (route.name === 'Characters') return <Users color={color} size={iconSize} />;
+                    if (route.name === 'Locations') return <MapPin color={color} size={iconSize} />;
+                    if (route.name === 'Lore') return <BookOpen color={color} size={iconSize} />;
                     return null;
                 },
             })}

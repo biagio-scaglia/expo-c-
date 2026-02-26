@@ -27,8 +27,9 @@ const CharactersScreen = () => {
             <FlatList
                 data={data}
                 keyExtractor={item => item.id.toString()}
-                renderItem={({ item }) => (
+                renderItem={({ item, index }) => (
                     <EldenCard
+                        index={index}
                         title={item.name}
                         subtitle={item.title}
                         description={item.description}

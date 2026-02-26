@@ -27,8 +27,9 @@ const LoreScreen = () => {
             <FlatList
                 data={data}
                 keyExtractor={item => item.id.toString()}
-                renderItem={({ item }) => (
+                renderItem={({ item, index }) => (
                     <EldenCard
+                        index={index}
                         title={item.title}
                         description={item.content}
                     />
